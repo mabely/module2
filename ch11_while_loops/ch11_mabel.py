@@ -1,44 +1,17 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""
-Created on Tue Dec 18 09:25:00 2018
 
-@author: Me
-"""
 
-#x = 33
-#while x >= 1:
-#    print(x, ': ', end='')
-#    x = x / 2
-#print(x)
+#REPEATED DIVISION AND PRINTING
+x = 33
+while x >= 1:
+    print(x, ': ', end='')
+    x = x / 2
+print(x)
 
+#================================================
 #COMPUTING TRIANGULAR NUMBERS
-
-#def tri(input):
-#    
-##    while input > 0:
-#
-#    triNo = input 
-#
-#    print(triNo, 1)
-#    
-#    while sum > 1:
-#        
-#        if triNo > 1 and sum != :
-#            sum = input - 1
-#            triNo = input + sum
-#            print(triNo, 2)
-#        else:
-#            sum = 0
-#            triNo = input + sum
-#            print(triNo, 'else')
-#        
-#    print(triNo)
-#    return sum
-#        
-#tri(4)
-#
-
+#================================================
 
 def triangular(n):
     trinum = 0
@@ -49,8 +22,10 @@ def triangular(n):
     return trinum
 
 
-#BREAK
-
+#================================================
+#USING BREAKS IN WHILE LOOPS
+#================================================
+    
 i = 55
 while i > 10:
     print(i)
@@ -59,7 +34,10 @@ while i > 10:
         break
 
 
+#================================================
 #USER GREETING UNTIL BREAK
+#================================================
+
 def userGreeting():
     
     while True:
@@ -68,23 +46,28 @@ def userGreeting():
         if name == 'done':    
             break
         print('Hello', name)
-    
+
+
+#================================================
 #ASSESSING GRADES V1
+#================================================
 
-#grade = 1
-#
-#while grade > 0:
-#    grade = int(input('(type "exit" to quit program) \nGo on, tell us your grades: '))
-#    if grade >= 70:
-#        print('FIRST CLASS')
-#    elif grade < 40:
-#        print('FAIL')
-#    elif grade >= 40:
-#        print('PASS')
-#    elif grade == 'done':
-#        break
+grade = 1
 
-#ASSESSING GRADES V1: with exception handling
+while grade > 0:
+    grade = int(input('(type "exit" to quit program) \nGo on, tell us your grades: '))
+    if grade >= 70:
+        print('FIRST CLASS')
+    elif grade < 40:
+        print('FAIL')
+    elif grade >= 40:
+        print('PASS')
+    elif grade == 'done':
+        break
+
+#================================================
+#ASSESSING GRADES V2: with exception handling
+#================================================
         
 def grade():
     

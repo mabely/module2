@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 def DataBundlePurchase(truepin, balance):
     if checkpin(truepin):
         print('Welcome to BT.')    
@@ -17,10 +19,10 @@ def DataBundlePurchase(truepin, balance):
 
 
 #BUYING DATA BUNDLE
-def databundle(balance):
-gb1 = 5
-gb5 = 10
-gb10 = 20
+#def databundle(balance):
+#gb1 = 5
+#gb5 = 10
+#gb10 = 20
 
     print('Our data bundles are as follows: \n1. 1GB --- £5 \n2. 5GB --- £10 \n3. 10GB --- £20 \nYour current balance is £{}'.format(balance))
     
@@ -68,9 +70,4 @@ def checkpin_prompt(truepin):
 #    2: ["Purchase data bundle", ]
 #        }
         
-    
-    
-    
-    
-    
     

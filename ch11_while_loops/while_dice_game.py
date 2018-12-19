@@ -1,10 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""
-Created on Tue Dec 18 14:05:01 2018
 
-@author: Me
-"""
 from random import randint
 
 def dice_game():

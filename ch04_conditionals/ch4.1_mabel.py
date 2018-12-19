@@ -1,3 +1,20 @@
+# -*- coding: utf-8 -*-
+
+#TAKING USER INPUT NUMBER AS ARGUMENTS TO PRINT WHETHER THE NUMBER IS ODD OR EVEN USING CONDITIONALS
+#EXERCISE FROM https://www.practicepython.org/exercise/2014/02/05/02-odd-or-even.html
+
+number = int(input('Please enter a number: '))
+
+if number%2 == 0:
+    print('This is even')
+
+else:
+    print('This is odd')
+
+
+# TAKES ANOTHER USER INPUT NUMBER TO COMPARE WHETHER THE FIRST NUMBER FROM ABOVE 
+# DIVIDES INTO THE LATTER
+    
 def oddoreven():
     number = input('Enter a number: ')
     number = int(number)
@@ -11,10 +28,9 @@ def oddoreven():
     else:
         print('That\'s an odd number')
 
-    return number
+    return number 
 
 def oddoreven2(number):
-#    oddoreven()
     check = number
     num = input('Enter another number: ')
     if int(check)%int(num)==0:
@@ -25,6 +41,3 @@ def oddoreven2(number):
 
 my_number = oddoreven()     
 oddoreven2(my_number)
-
-#At which point is it executing oddoreven()? 
-#When I call the function, why do I need the parameters?

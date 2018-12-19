@@ -1,6 +1,7 @@
-
+# -*- coding: utf-8 -*-
 
 #PRACTISING SUPERCLASS AND SUBCLASS THROUGH AN AGEIST STEREOTYPES GAME
+
 class human():
 #   def __init__(self):
 # When initiating, it stores the attributes of that class into memory space 

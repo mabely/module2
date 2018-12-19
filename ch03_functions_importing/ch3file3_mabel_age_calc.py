@@ -1,3 +1,7 @@
+# -*- coding: utf-8 -*-
+
+#USING USER INPUT TO CALCULATE AGE - SOME EXAMPLES OF STRING METHODS, TRY/EXCEPT
+
 import datetime
 
 now = datetime.datetime.now()
@@ -24,4 +28,4 @@ def age_finder(name):
        print("Oops, that's not a number")
        age_finder(name)
 
-hello_world()
+    return age

@@ -74,7 +74,7 @@ print(y)
 t = set(a+b)
 print(t)
 
-#CREATING TUPLES
+#CREATING TUPLES, THESE ARE IMMUTABLE
 z = ('this', 'and', 'that')
 
 #LAMBDA

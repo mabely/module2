@@ -1,0 +1,61 @@
+########## cigar_party 
+
+def cigar_party(cigars, is_weekend):
+  if (is_weekend == True) and (cigars >=40):
+    return True
+  elif is_weekend == False:
+    if cigars >=40 and cigars <=60:
+      return True
+    else:
+      return False
+  else:
+    return False
+
+########## squirrell_play
+
+def squirrel_play(temp, is_summer):
+  if (is_summer == True):
+    if temp >=60 and temp <=100:
+      return True
+    else:
+      return False
+  elif temp >=60 and temp <=90:
+    return True
+  else:
+    return False
+    
+########## date_fashion 
+
+def date_fashion(you, date):
+  if (you <= 2) or (date <= 2):
+    return 0
+  elif (you >= 8) or (date >= 8): 
+    return 2
+  else:
+    return 1
+
+########## caught_speeding
+
+def caught_speeding(speed, is_birthday):
+  if is_birthday == False:
+    if speed <= 60:
+        return 0
+    elif (speed >= 61) and (speed <= 80):
+      return 1
+    elif speed >= 81:
+      return 2
+      
+  else:
+    if speed <= (60 + 5):
+      return 0
+    elif (speed >= (61 + 5)) and (speed <= (80 + 5)):
+      return 1
+    elif speed >= 81 + 5:
+      return 2
+  
+
+
+
+
+
+

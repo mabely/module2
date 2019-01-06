@@ -8,9 +8,7 @@ class Frame:
         self.width = width
         self.height = height
         self.screen = turtle.Screen()
-#       Sets up entire screen with additional width, height of 100.
         self.screen.setup(width=width+100,height=height+100,startx=0,starty=0)
-#       Sets up the inside canvas (llx, lly, urx, ury) x,y coordinates of lower left or upper right corner of canvas
         self.screen.setworldcoordinates(-50,-50,width+50,height+50)
         self.draw_frame()
 
@@ -98,6 +96,9 @@ class Shape:
 
     def vanish(self):
         self.turtle.hideturtle()
+
+    def show(self):
+        self.turtle.showturtle()
 
 ####################################################
 

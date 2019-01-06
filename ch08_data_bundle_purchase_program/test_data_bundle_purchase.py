@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from simplebundlepurchase_v1 import DataBundlePurchase
+from data_bundle_purchase import DataBundlePurchase
 
 # Test calls to program:
 print ('TEST EXAMPLE 1')

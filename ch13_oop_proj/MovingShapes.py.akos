@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 
+# The code glides now but how does it take into account the min max frame?
+
 from Shapes import *
 from pylab import random as r
 import time
@@ -23,50 +25,66 @@ class MovingShape:
         # self.goto(self.diameter/2, self.diameter/2)
         # print('I am at starting position')
 
-        self.minMax()
+        # Min, max coordinates for shapes to move within
+        self.minx = self.diameter/2
+        self.miny = self.diameter/2
+        self.maxx = self.width - (self.diameter/2)
+        self.maxy = self.height - (self.diameter/2)
+        self.x = self.minx + r() * (self.maxx - self.minx)
+        self.y = self.miny + r() * (self.maxy - self.miny)
+        self.goto(self.x, self.y)
+        self.directionx = 1
+        self.directiony = 1
 
         # r() in the if/else statement decides whether it moves in pos or neg direction. Formula gives random value between
         # 5-15 to give dx,dy varies velocity values. movetick() updates this
-        randnum = r()
-        if randnum < 0.5:
-            self.dx = (5 + 10 * r()) * -1
-            self.dy = (5 + 10 * r()) * -1
-        else:
-            self.dx = 5 + 10 * r()
-            self.dy = 5 + 10 * r()
 
     def goto(self, x, y):
         self.figure.goto(x, y)
         print(x, y)
-
-    def minMax(self):
-        # Min, max coordinates and calculations for shapes to move within a set frame
-        self.minx = self.diameter*0.74
-        self.miny = self.diameter*0.74
-        self.maxx = self.width - (self.diameter*0.74)
-        self.maxy = self.height - (self.diameter*0.74)
-        self.x = self.minx + r() * (self.maxx - self.minx)
-        self.y = self.miny + r() * (self.maxy - self.miny)
-        self.goto(self.x, self.y)
-
     def moveTick(self):
-        # dx,dy are the increment of each loop of movement/rate of movement
-        self.x = self.x + self.dx 
-        self.y = self.y + self.dy 
-        # These conditionals revert numbers 
-        if self.x >= self.maxx: 
-            self.dx = self.dx * -1
+        # dx,dy are rate of movement
+
+        randnum = r()
+        # if randnum < 0.5:
+        #     self.dx = (5 + 10 * r()) * -1
+        #     self.dy = (5 + 10 * r()) * -1
+        # else:
+        #     self.dx = 5 + 10 * r()
+        #     self.dy = 5 + 10 * r()
+
+        # self.dx = 5 + 10 * r()
+        # self.dy = 5 + 10 * r()
+
+        # self.x = self.x + self.dx
+        # self.y = self.y + self.dy
+
+        if self.x >= self.maxx:
+            print("Hit X max")
+            self.directionx = -1
         if self.x <= self.minx:
-            self.dx = self.dx * -1
-            # time.sleep(15)
+            print("Hit X min")
+            self.directionx = 1
+        self.dx = (5 + 10 * r()) * self.directionx
+        self.x = self.x + self.dx
+
         if self.y >= self.maxy:
-            self.dy = self.dy * -1
+            print("Hit Y max")
+            self.directiony = -1
         if self.y <= self.miny:
-            self.dy = self.dy * -1
-            # time.sleep(15)
-            # self.vanish(self)
+            print("Hit Y min")
+            self.directiony = 1
+        self.dy = (5 + 10 * r()) * self.directiony
+        self.y = self.y + self.dy
+
+        # if self.y >= self.maxy or self.y <= self.miny:
+        #     print("Switched y direction")
+        #     self.dy = (5 + 10 * r()) * -1
+        #     self.y = self.y + self.dy
 
         self.goto(self.x,self.y)
+
+
 
 class Square(MovingShape):
     def __init__(self, frame, diameter):
@@ -75,17 +93,6 @@ class Square(MovingShape):
 class Diamond(MovingShape):
     def __init__(self, frame, diameter):
         MovingShape.__init__(self, frame, 'diamond', diameter)
-
-    # def minMax(self):
-    #     # Min, max coordinates and calculations for shapes to move within a set frame
-    #     self.minx = self.diameter*2
-    #     self.miny = self.diameter*2
-    #     self.maxx = self.width - (self.diameter/2)
-    #     self.maxy = self.height - (self.diameter/2)
-    #     self.x = self.minx + r() * (self.maxx - self.minx)
-    #     self.y = self.miny + r() * (self.maxy - self.miny)
-    #     self.goto(self.x, self.y)
-    #     # Min, max coordinates and calculations for shapes to move within a set frame
 
 class Circle(MovingShape):
     def __init__(self, frame, diameter):

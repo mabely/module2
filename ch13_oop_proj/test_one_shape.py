@@ -1,5 +1,13 @@
 from MovingShapes import *
+import time
 frame = Frame()
-shape1 = Square(frame,100)
-#for i in range(100):
-#    shape1.moveTick()
+shape1 = Diamond(frame,100)
+
+# This shows min and max positions
+shape1.goto(shape1.minx, shape1.miny)
+time.sleep(1)
+shape1.goto(shape1.maxx, shape1.maxy)
+time.sleep(1)
+
+for i in range(100):
+   shape1.moveTick()

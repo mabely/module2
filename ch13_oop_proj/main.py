@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from Shapes import *
 import time
 frame = Frame()

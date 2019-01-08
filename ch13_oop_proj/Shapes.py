@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import turtle
+import time
 
 ####################################################
 
@@ -89,10 +90,14 @@ class Shape:
         t.fillcolor('')
         t.speed('fastest')
         t.shapesize(diameter/20.0,diameter/20.0,1)
-        t.showturtle()
+        # The below is commented out to as self.goto will showturtle() before moving
+#        t.showturtle()
         self.turtle = t
 
     def goto(self,x,y):
+        self.turtle.goto(self.diameter/2, self.diameter/2)
+        # Shows only when shape goto has positioned itself at 0,0, accounting for shape diameter        
+        self.turtle.showturtle()
         self.turtle.goto(x,y)
 
     def vanish(self):

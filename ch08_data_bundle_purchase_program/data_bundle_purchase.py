@@ -11,7 +11,9 @@ def DataBundlePurchase(truepin, balance):
             return('Your credit balance is £{}'.format(balance))
             
         elif actions == '2' and checkmobile():
-            databundle(balance)
+            DataBundlePurchase(balance)
+
+        #INSERT AN ELSE STATEMENT FOR IF WRONG NEITHER 1/2 IS ENTERED
             
     else:
         print('Your account has been locked, please contact us at 020 123 456.')

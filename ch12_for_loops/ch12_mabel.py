@@ -59,6 +59,7 @@ def sum_values(l):
     return sumV
 print(sum_values(values))
 
+#THIS FOR LOOP CREATES A DICT BUT REPLACES EACH VALUE
 
 outer_vals = [1, 2, 3]
 inner_vals = ['soup', 'bread', 'butter']
@@ -73,31 +74,34 @@ for oval in outer_vals:
             d[oval] = ival
             print(d)
     
-
-
+# CREATES DICT OF KEY AND VALUE PAIR USING ZIP()
 # List of strings
 listOfStr = ["hello", "at" , "test" , "this" , "here" , "now" ]
     
 # List of ints
 listOfInt = [56, 23, 43, 97, 43, 102]
 
-
 # Create a zip object from two lists
-zipbObj = zip(listOfStr, listOfInt)
+zipObj = zip(listOfStr, listOfInt)
 
 # Create a dictionary from zip object
-dictOfWords = dict(zipbObj)
+dictOfWords = dict(zipObj)
 
 # Create a zip object from two lists
-zipbObj = zip(listOfStr, listOfInt)
+zipObj = zip(listOfStr, listOfInt)
  
 # Create a dictionary from zip object
-dictOfWords = dict(zipbObj)
+dictOfWords = dict(zipObj)
 
 print(dictOfWords)
 
+# MULTIPLICATION TABLE
+
+for i in range(1,11):
+    for j in range(1,11):
+        print('{0:>3}'.format(i * j), end='')
+    print('\n')
 
 
 
-    
 

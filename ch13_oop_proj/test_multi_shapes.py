@@ -14,6 +14,7 @@ for i in range(numshapes):
 
 for i in range(300):
 # while True:
+    shapes.show()
     for shape in shapes:
         shape.moveTick()
 frame.close()

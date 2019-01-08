@@ -1,24 +1,11 @@
 # -*- coding: utf-8 -*-
 
-#====SIMPLE VERSION====#
-
-class Person:
-    # The init method establishes the attributes of the class
-    def __init__(self):
-    # self refers to the attribute of that particular instance
-        self.name = None
-        self.age = 'not defined'
-        self.isMale = None
-
-# Creating an instance/object of the Person class
-#personX = Person()
-# Calls the age attribute of object person1 (prints 'not defined' here)
-#personX.age
-
 #====INIT, METHODS====#
 
 class Person:
+    # The init method establishes the attributes of the class
     def __init__(self,name,age,gender,color):
+        # self refers to the attribute of that particular instance
         self.name = name
         self.age = age
         if gender == 'm':
@@ -53,7 +40,6 @@ person2.name
 person2.color      
 person2.greetingFormal
 person2.greetingAgeBased
-person3 = Person('Dumbledore',88,'m','silver')
 
 #====SUBCLASSES====#    
 
@@ -67,7 +53,11 @@ class Wizard(Person):
         
     # Overwriting the greetingFormal in Person class by redefining method
     def greetingFormal(self):
-        print('Welcome, Mr', self.name, end=' ')
+        if self.isMale:
+            print('Welcome, Mr', self.name, end=' ')
+        else:
+            print('Welcome, Ms', self.name, end=' ')
+
         print('- to the Hogwarts School of Witchcraft and Wizardry!')
         
     def greetingHouse(self):
@@ -84,8 +74,11 @@ class Wizard(Person):
     # Note to self to avoid naming cross-overs between attributes and methods
     def doSpell(self):
         print(self.spell + '!')
-    
+
+person3 = Wizard('Dumbledore',88,'m','silver','Disapparate','Gryffindor')
 person4 = Wizard('Harry Potter',29,'m','Gold','Expecto Patronum','Gryffindor')
+person5 = Wizard('Bellatrix Lestrange',47,'f','green','Imperius','Slytherin')
+person6 = Wizard('Newt Scamander',122,'m','blue','Appare Vestigium',')
 # The following calls the redefined method for Wizards
 person4.greetingFormal()
 # Note that rest of methods of original superclass Person are inherited

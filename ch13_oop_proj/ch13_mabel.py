@@ -78,7 +78,7 @@ class Wizard(Person):
 person3 = Wizard('Dumbledore',88,'m','silver','Disapparate','Gryffindor')
 person4 = Wizard('Harry Potter',29,'m','Gold','Expecto Patronum','Gryffindor')
 person5 = Wizard('Bellatrix Lestrange',47,'f','green','Imperius','Slytherin')
-person6 = Wizard('Newt Scamander',122,'m','blue','Appare Vestigium',')
+person6 = Wizard('Newt Scamander',122,'m','blue','Appare Vestigium','Hufflepuff')
 # The following calls the redefined method for Wizards
 person4.greetingFormal()
 # Note that rest of methods of original superclass Person are inherited

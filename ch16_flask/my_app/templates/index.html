@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+
+    <head>
+        <title>My App Page</title>
+        <link rel="stylesheet" href="{{ url_for("static", filename="css/main.css")}} ">
+    </head>
+    
+	<body id="landing" img src="{{ url_for("static", filename="../static/images/crayon-backgr.jpg")}} ">
+    	{% if name %}
+        	<h1>// Hello {{name}}!</h1>
+        {% else %}
+            <h1>// Hello anonymous person!</h1>
+        {% endif %}    
+
+        {% block content %}
+            <div id="contact-form">
+               <p>Let’s keep in touch!</p>
+        		<form method="post" action="/signup">
+        		    <label for="email">Email address:</label>
+        		    <!–– type comes with certain things like specific keyboard, etc. ––>
+        		    <input type="email" id="email" name="email" required="required">
+        		    <input type="submit" id="submit-button" name="submit" value="Submit" >
+        		</form>
+            </div>
+        {% endblock %}
+        
+	</body>
+
+</html>

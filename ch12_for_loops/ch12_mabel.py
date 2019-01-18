@@ -14,17 +14,26 @@ for val in values:
     print('---->' + str(val))
     print('---->' + str(val+50))
 
-#LOOP THROUGH STRING DATATYPE
-oldsentence = 'This is my sentence'
-sentence = oldsentence.split()
-for word in sentence:
-    print(word)
-
 #LOOPING THROUGH A STRING - RETURNS EACH CHARACTER
 for words in 'Here is another sentence':
     print(words)
 
-#LOOPING THROUGH A TUPLE/DICTIONARY
+#LOOPING THROUGH A TUPLE
+bt_further_tuple = ('chen','joke','rowan','lou')
+bt_further_list = []
+for i in bt_further_tuple:
+    bt_further_list.append(i)
+print(bt_further_list)
+
+#LOOPING THROUGH A DICT
+customer_data = {'name':'celine dion', 'age':55, 'gender':'female','occupation':'singer'}
+value_list = []
+for var in customer_data:
+    #appends the values to a new list value_list    
+    value_list.append(customer_data[var])
+print(value_list)
+
+#SORTING THROUGH A DICTIONARY
 densities = {'iron': [7.8, 14, 76], 'gold': [19.3, 364, 15], 'zinc': [7.13, 7, 7], 'lead': [11.4, 6, 83]}
 
 metals = list(densities.keys())
@@ -43,14 +52,13 @@ for k, v in sorted(densities.items(), key = lambda kv : kv[1][1], reverse = True
 values = [1, 3, 5]
 
 #INCREMENTAL SUM/ADDING OF ALL NUMBERS IN LIST WITH FOR LOOP
-total_count = 0
+total_val = 0
 
 for val in values:
-    total_count += val
+    total_val += val
 print('TOTAL: ' + str(total_count))
     
 #ANOTHER WAY TO ADD UP ALL NUMBERS IN LIST
-
 def sum_values(l):
     sumV = 0
     for val in l:
@@ -58,48 +66,51 @@ def sum_values(l):
     return sumV
 print(sum_values(values))
 
+#LOOPING TO CALCULATE NEW SET OF VALS FROM LIST AND APPENDING TO NEW LIST 
+#(here the new list is converted from GBP vals to CNY)
+british_sterling = [1,2,5,10,20]
+chinese_yuan = []
+for num in range(len(british_sterling)):
+    chinese_yuan.append(british_sterling[num] * 7)
 
+print(british_sterling)
+print(chinese_yuan)
 
-#######################################
-#LOOP WITH INDEX VALUES
+#LOOPING WITH INDEX VALS
+#LOOP RANGE: uses the index to loop, what follows must correspond (compare below)
+replace_me = [1,6,4,90]
+for val in range(len(replace_me)):
+    replace_me[val] = replace_me[val] * 2
+print(replace_me)
 
+#LOOP VALUE: each value is looped through (compare above)
+replace_me = [1,6,4,90]
+index_count = 0
+for val in replace_me:
+    replace_me[index_count] = replace_me[index_count] * 2
+    index_count += 1
+print(replace_me)
 
-#ex10 looping with index values 
-values = [3,12,9]
-for index in range(len(values)):
-    values[index] = values[index] ** 2
-print(values)
+#LOOPING WITH RANGE
+#start(index),stop(inclusive),step. below starts at 4, so prints 4, then 180
+some_nums = [1,6,4,90, 180,222]
+for val in range(2,5,2):
+    print(some_nums[val])
 
-for i in range(3,10,2):
-    print(i)
-      
-print(list(range(3)))
-print(type(range(3)))
-
-values = [3, 12, 9, 5, 6]
-for index in range(1, len(values), 2):
-    print(values[index], "with index", index)
-    values[index] = values[index] ** 2
-    
-values = [3,12,9]
-for index in range(len(values)):
-    print(index)
-    values[index] = values[index] * 2
-print(values)
-
-#ex11 using a loop with the range function
-names = ["milly", "bob", "kate", "mary", "alanis", "elly"]
-for i in range(1, len(names), 3):
-    print("find them", names[i])
-        
-
-#ex12 using breaks in for loops
-nums = [1,5,30,200,101,100,22]
-for n in nums:
-    if n > 100:
-        print("found", n)
+#USING BREAKS: looking for the letter 'h'
+my_word = 'xylophone'
+for letter in my_word:
+    if letter == 'h':
+        print('Got it! It is',letter)
         break
-    
+    else:
+        print('It is not', letter)
+
+
+
+
+
+
 nums = [1,5,30,200,101,100,22]
 print("length",len(nums))
 print(list(range(len(nums))))
@@ -137,7 +148,6 @@ for item in colours:
         print(d)
 
 #######################################
-#LOOP WITH RANGE
 
 
 #LOOP WITH BREAK
